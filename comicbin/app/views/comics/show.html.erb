@@ -1,13 +1,10 @@
 <div class='row'>
-  <div class='col-md-5'>
-    <!-- INSERT COMIC COVER IMAGE HERE WITH ERB.
-         ATTACH THE CLASS of 'img-responsive' TO THIS LINK -->
+  <div class='col-md-3'>
+    <img src = "<%= @image%>" class='image-responsive' height="330" width="220">
   </div>
-  <div class='col-md-7'>
-    <h1><!-- INSERT COMIC BOOK TITLE HERE WITH ERB --></h1>
-    <h4><!-- INSERT COMIC BOOK DESCRIPTION HERE WITH ERB --></h4>
-    <!-- INSERT LINK TO DELETE A COMIC BOOK HERE.
-         ATTACH A CLASS of 'btn btn-warning' TO THIS LINK.
-         ALSO INCLUDE A CONFIRMATION MESSAGE 'Are you sure?' -->
+  <div class='col-md-9'>
+    <h1><%= @title %></h1>
+    <h4><%= @description %></h4>
+    <%= link_to "Delete This Comic", "/comics/destroy/#{@comic.id}", class: 'btn btn-warning', :confirm => "Are you sure?" %>    
   </div>
 </div>
